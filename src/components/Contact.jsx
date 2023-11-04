@@ -57,10 +57,11 @@ const Contact = () => {
     }
 
     return (
-        <div className=' md:h-screen text-black bg-white w-full my-4 md:my-0'>
+        <div className=' md:h-screen bg-white  w-full my-4 md:my-0 dark:text-slate-100 dark:bg-gradient-to-b dark:to-slate-950 
+        dark:from-slate-900 text-slate-800'>
             <div className='md:h-screen flex items-center'>
-                <div className='flex justify-center border-2 border-slate-300 bg-slate-200 shadow-lg rounded-md p-3 items-center w-full mx-2 md:mx-32 h-full  md:h-[80%] flex-col md:flex-row'>
-                    <div className='bg-green-600 text-white mx-auto md:h-full md:1/2 lg:w-2/5  w-full justify-center items-center rounded-lg p-2'>
+                <div className='flex justify-center border-2 border-slate-300 bg-slate-200 shadow-lg rounded-md p-3 items-center w-full mx-2 md:mx-32 h-full  md:h-[80%] flex-col md:flex-row dark:bg-slate-800 dark:border-slate-900'>
+                    <div className='bg-green-600 dark:bg-green-600 text-white mx-auto md:h-full md:1/2 lg:w-2/5  w-full justify-center items-center rounded-lg p-2'>
                         <h1 className='text-2xl p-2'>Contact Information</h1>
                         {mycontact.map((Contact) => {
                             return (
@@ -74,13 +75,13 @@ const Contact = () => {
                     <form className='p-2 mx-auto gap-4 h-full md:1/2 lg:w-3/5 w-full' ref={form} onSubmit={sendEmail}>
                         <div className='grid grid-cols-2 gap-3'>
                             <div>
-                                <input className='w-full border-slate-300 border-2 rounded-sm p-3' placeholder='Name' type="text" name="from_name" required />
+                                <input className='w-full dark:bg-slate-700 dark:border-slate-800 dark:text-slate-50 border-slate-300 border-2 rounded-sm p-3' placeholder='Name' type="text" name="from_name" required />
                             </div>
                             <div>
-                                <input className='w-full border-slate-300 border-2 rounded-sm p-3' placeholder='Email' type="email" name="email_name" required />
+                                <input className='w-full dark:bg-slate-700 dark:border-slate-800 dark:text-slate-50 border-slate-300 border-2 rounded-sm p-3' placeholder='Email' type="email" name="email_name" required />
                             </div>
                             <div className='col-span-2'>
-                                <textarea className='w-full border-slate-300 border-2 rounded-sm p-3 h-64' placeholder='Message' name="message" required />
+                                <textarea className='w-full dark:bg-slate-700 dark:border-slate-800 dark:text-slate-50 border-slate-300 border-2 rounded-sm p-3 h-64' placeholder='Message' name="message" required />
                             </div>
                         </div>
                         <div className='w-full text-center mt-4 text-white'>

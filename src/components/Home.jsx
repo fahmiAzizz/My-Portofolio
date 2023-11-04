@@ -4,12 +4,14 @@ import { AiOutlineArrowRight } from 'react-icons/ai'
 
 const Home = () => {
     return (
-        <div name="home" className=' pt-20 h-screen w-full bg-slate-50'>
+        <div name="home" className='pt-20 md:pt-0 h-screen w-full bg-slate-50 text-slate-800 
+        dark:text-slate-100 dark:bg-gradient-to-b dark:from-slate-800 
+        dark:to-slate-900'>
             <div className='max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row'>
-                <div className=' p-8 md:p-0'>
-                    <p className='px-1'>Hello i'am a</p>
-                    <h1 className='text-3xl text-green-600  md:text-5xl font-bold mb-2'>Fullstack Website Developer</h1>
-                    <p>
+                <div className=' p-2 md:p-0'>
+                    <p className='px-1 text-lg font-semibold'>Hello i'am a</p>
+                    <h1 className=' text-green-500  text-4xl md:text-6xl font-bold mb-2'>Fullstack Website Developer</h1>
+                    <p className=' italic'>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat voluptates quos illo nemo dolorem deleniti accusamus mollitia eius beatae minus!
                     </p>
                     <div>

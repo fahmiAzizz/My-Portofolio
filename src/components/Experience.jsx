@@ -56,13 +56,13 @@ const Experience = () => {
 
 
     return (
-        <div name="experience" className='w-full text-black bg-slate-200'>
+        <div name="experience" className='w-full text-black bg-slate-200 dark:text-slate-100 dark:bg-slate-900'>
             <div className=' h-full justify-center p-6 max-w-screen-lg mx-auto flex flex-col'>
                 <div>
                     <p className='text-3xl  text-center font-semibold mb-2'>Experience</p>
                 </div>
                 <br />
-                <div className='grid grid-cols-2 md:grid-cols-3 gap-8 justify-items-center'>
+                <div className='grid grid-cols-2 md:grid-cols-3 md:gap-8 justify-items-center'>
                     {logos.map(logo => (
                         <div className={`shadow-md px-12 py-2 shadow-${logo.color}-400`}>
                             <img className='w-28 h-28' key={logo.id} src={logo.img} alt="" />
