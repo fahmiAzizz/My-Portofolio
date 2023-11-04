@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../assets/hero.jpeg'
+import Hero from '../assets/Hero.jpeg'
 import { AiOutlineArrowRight } from 'react-icons/ai'
 
 const Home = () => {

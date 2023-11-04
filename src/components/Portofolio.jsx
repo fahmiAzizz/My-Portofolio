@@ -1,7 +1,6 @@
 import React from 'react'
-import Hero from '../assets/Hero.jpeg'
 import Project1 from '../assets/project1.png'
-import { AiOutlineGithub } from 'react-icons/ai'
+
 
 const Portofolio = () => {
     return (
