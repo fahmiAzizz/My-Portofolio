@@ -15,8 +15,8 @@ const Home = () => {
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat voluptates quos illo nemo dolorem deleniti accusamus mollitia eius beatae minus!
                     </p>
                     <div>
-                        <button className='group w-fit bg-gradient-to-r from-green-500 to-green-600 text-white p-2 rounded-lg flex justify-center items-center mt-2 hover:scale-105 hover:ring-green-700 hover:ring-2'>
-                            My Profile
+                        <button onClick={'#portofolio'} className='group w-fit bg-gradient-to-r from-green-500 to-green-600 text-white p-2 rounded-lg flex justify-center items-center mt-2 hover:scale-105 hover:ring-green-700 hover:ring-2'>
+                            <a href="#portofolio">My Work</a>
                             <span className='pl-2 group-hover:rotate-90 duration-300'><AiOutlineArrowRight /></span>
                         </button>
                     </div>

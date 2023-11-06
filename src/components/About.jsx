@@ -15,7 +15,7 @@ const About = () => {
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit porro quod nemo vel ducimus quasi corporis, vitae id exercitationem officia dolore reiciendis perspiciatis, dignissimos deserunt, cum nam! Nam, voluptas unde?</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui consectetur molestiae vel quisquam vitae ducimus voluptas corporis, optio provident deleniti.</p>
                     </div>
-                    <button className='bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-2 text-white hover:scale-105 hover:ring-green-700 hover:ring-2'>Contact Me </button>
+                    <button className='bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-2 text-white hover:scale-105 hover:ring-green-700 hover:ring-2'><a href="#contact">Contact Me</a> </button>
                 </div>
             </div>
         </div>
