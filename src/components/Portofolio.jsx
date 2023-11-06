@@ -4,7 +4,7 @@ import Project1 from '../assets/project1.png'
 
 const Portofolio = () => {
     return (
-        <div className='w-full  text-slate-800 h-auto bg-slate-50 dark:text-slate-100 dark:bg-gradient-to-b dark:from-slate-800 
+        <div id="portofolio" className='w-full py-20 text-slate-800 h-auto bg-slate-50 dark:text-slate-100 dark:bg-gradient-to-b dark:from-slate-800 
         dark:to-slate-900 '>
             <div className='p-6 max-w-screen-lg  mx-auto justify-center h-auto flex flex-col'>
                 <div>
@@ -54,7 +54,6 @@ const Portofolio = () => {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

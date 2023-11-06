@@ -57,7 +57,7 @@ const Contact = () => {
     }
 
     return (
-        <div className=' md:h-screen bg-white  w-full my-4 md:my-0 dark:text-slate-100 dark:bg-gradient-to-b dark:to-slate-950 
+        <div id='contact' className=' md:h-screen bg-white dark:bg-slate-950  w-full p-4 md:p-0 dark:text-slate-100 dark:bg-gradient-to-b dark:to-slate-950 
         dark:from-slate-900 text-slate-800'>
             <div className='md:h-screen flex items-center'>
                 <div className='flex justify-center border-2 border-slate-300 bg-slate-200 shadow-lg rounded-md p-3 items-center w-full mx-2 md:mx-32 h-full  md:h-[80%] flex-col md:flex-row dark:bg-slate-800 dark:border-slate-900'>

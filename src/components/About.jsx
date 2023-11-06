@@ -3,10 +3,10 @@ import Hero from '../assets/Hero.jpeg'
 
 const About = () => {
     return (
-        <div name='about' className='w-full h-screen dark:text-slate-100 dark:bg-gradient-to-b dark:to-slate-800 
+        <div id='about' className='w-full h-screen dark:text-slate-100 dark:bg-gradient-to-b dark:to-slate-800 
         dark:from-slate-900 text-slate-800 bg-slate-200'>
-            <div className='w-full h-full justify-center items-center p-6 max-w-screen-lg mx-auto grid md:grid-cols-2'>
-                <div className='mt-2 md:mt-0'>
+            <div className='w-full h-full justify-center items-end md:items-center p-6 max-w-screen-lg mx-auto grid md:grid-cols-2'>
+                <div className='mt-2  md:mt-0'>
                     <img src={Hero} className=' w-2/3 rounded-3xl mx-auto' alt="" />
                 </div>
                 <div className='m-2'>
