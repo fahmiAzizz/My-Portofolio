@@ -121,11 +121,16 @@ const Navbar = () => {
                 }
             )}>
             <div>
-                <h1 className='text-5xl font-bold ml-8 logo dark:text-white'>Fahmi</h1>
+                <h1 className={cn(
+                    'text-5xl font-bold ml-8 logo dark:text-white',
+                    {
+                        'text-green-700 dark:text-green-600': hasScrolled
+                    }
+                )}>Fahmi</h1>
             </div>
             <ul className='hidden md:flex'>
                 {links.map(link => (
-                    <li key={link.id} className='dark:text-white text-xl px-4 mr-8 cursor-pointer font-medium text-gray-800 hover:scale-110 duration-200 '><a href={link.link}>{link.name}</a></li>
+                    <li key={link.id} className='dark:text-white hover:text-green-600 text-xl px-4 mr-8 cursor-pointer font-medium text-gray-800 hover:scale-110 duration-200 '><a href={link.link}>{link.name}</a></li>
                 ))}
 
                 <li className='flex items-center gap-1'>

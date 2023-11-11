@@ -46,7 +46,7 @@ const Portofolio = () => {
                             <p className=' border-b-2 border-slate-300 p-2 text-center'>{project.name}</p>
                             <div className='flex flex-row items-center justify-center  py-2'>
                                 <button className='w-2/3 hover:scale-105 duration-300'>
-                                    <a href={project.demo}>Demo</a>
+                                    <a href={project.demo} target="_blank">Demo</a>
                                 </button>
                                 <div className='w-1/2 hover:scale-105 duration-300'>
                                     <button className='flex items-center'>

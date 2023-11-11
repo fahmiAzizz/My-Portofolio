@@ -85,7 +85,7 @@ const Contact = () => {
                             </div>
                         </div>
                         <div className='w-full text-center mt-4 text-white'>
-                            <button onClick={submitMessage} className='text-center p-2 rounded-lg mx-auto bg-gradient-to-r from-green-500 to-green-600 hover:scale-105 hover:ring-green-700 hover:ring-2' type="submit" value="Send" >Send Message</button>
+                            <button onClick={submitMessage} className='duration-300 text-center p-2 rounded-lg mx-auto bg-gradient-to-r from-green-500 to-green-600 hover:scale-105 hover:ring-green-700 hover:ring-2' type="submit" value="Send" >Send Message</button>
                         </div>
                     </form>
                 </div>
