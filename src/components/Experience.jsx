@@ -65,7 +65,7 @@ const Experience = () => {
                 <div className='grid grid-cols-2 md:grid-cols-3 md:gap-8 justify-items-center'>
                     {logos.map(logo => (
                         <div className={`shadow-md px-12 py-2 shadow-${logo.color}-400`}>
-                            <img className='w-28 h-28' key={logo.id} src={logo.img} alt="" />
+                            <img className='w-28 h-22' key={logo.id} src={logo.img} alt="" />
                             <p className='text-center py-2 font-semibold'>{logo.name}</p>
                         </div>
                     ))}

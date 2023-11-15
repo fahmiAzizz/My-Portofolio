@@ -1,21 +1,15 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import Swal from 'sweetalert2'
 import { BiLogoGmail, BiLogoLinkedinSquare, BiLogoWhatsappSquare, BiLogoGithub, BiLogoInstagramAlt } from 'react-icons/bi'
 
 const Contact = () => {
     const form = useRef();
-
-    const sendEmail = (e) => {
-        e.preventDefault();
-
-        emailjs.sendForm('service_89y1tom', 'template_edy6xnd', form.current, 'ymDzoRuk6tD8secMs')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
-    };
+    const [formData, setFormData] = useState({
+        from_name: '',
+        email_name: '',
+        message: '',
+    });
 
     const mycontact = [
         {
@@ -51,15 +45,24 @@ const Contact = () => {
     ]
 
     function submitMessage() {
-        Swal.fire(
-            'Pesan Terkirim'
-        )
+        emailjs.sendForm('service_89y1tom', 'template_edy6xnd', form.current, 'ymDzoRuk6tD8secMs')
+            .then((result) => {
+                console.log(result.text);
+                setFormData({
+                    from_name: '',
+                    email_name: '',
+                    message: '',
+                });
+            }, (error) => {
+                console.log(error.text);
+            });
+        Swal.fire('Pesan Terkirim');
     }
 
     return (
-        <div id='contact' className=' md:h-screen bg-white dark:bg-slate-950  w-full p-4 md:p-0 dark:text-slate-100 dark:bg-gradient-to-b dark:to-slate-950 
+        <div id='contact' className=' md:h-screen items-center flex justify-center bg-white dark:bg-slate-950  w-full p-4 md:p-0 dark:text-slate-100 dark:bg-gradient-to-b dark:to-slate-950 
         dark:from-slate-900 text-slate-800'>
-            <div className='md:h-screen flex items-center'>
+            <div className='md:h-[80%] justify-center flex items-center'>
                 <div className='flex justify-center border-2 border-slate-300 bg-slate-200 shadow-lg rounded-md p-3 items-center w-full mx-2 md:mx-32 h-full  md:h-[80%] flex-col md:flex-row dark:bg-slate-800 dark:border-slate-900'>
                     <div className='bg-green-600 dark:bg-green-600 text-white mx-auto md:h-full md:1/2 lg:w-2/5  w-full justify-center items-center rounded-lg p-2'>
                         <h1 className='text-2xl p-2'>Contact Information</h1>
@@ -72,16 +75,34 @@ const Contact = () => {
                             )
                         })}
                     </div>
-                    <form className='p-2 mx-auto gap-4 h-full md:1/2 lg:w-3/5 w-full' ref={form} onSubmit={sendEmail}>
+                    <form className='p-2 mx-auto gap-4 h-full md:1/2 lg:w-3/5 w-full' ref={form}>
                         <div className='grid grid-cols-2 gap-3'>
                             <div>
-                                <input className='w-full dark:bg-slate-700 dark:border-slate-800 dark:text-slate-50 border-slate-300 border-2 rounded-sm p-3' placeholder='Name' type="text" name="from_name" required />
+                                <input
+                                    className='w-full dark:bg-slate-700 dark:border-slate-800 dark:text-slate-50 border-slate-300 border-2 rounded-sm p-3'
+                                    placeholder='Name'
+                                    type="text"
+                                    name="from_name"
+                                    value={formData.from_name}
+                                    onChange={(e) => setFormData({ ...formData, from_name: e.target.value })}
+                                    required />
                             </div>
                             <div>
-                                <input className='w-full dark:bg-slate-700 dark:border-slate-800 dark:text-slate-50 border-slate-300 border-2 rounded-sm p-3' placeholder='Email' type="email" name="email_name" required />
+                                <input className='w-full dark:bg-slate-700 dark:border-slate-800 dark:text-slate-50 border-slate-300 border-2 rounded-sm p-3'
+                                    placeholder='Email'
+                                    type="email"
+                                    name="email_name"
+                                    value={formData.email_name}
+                                    onChange={(e) => setFormData({ ...formData, email_name: e.target.value })}
+                                    required />
                             </div>
                             <div className='col-span-2'>
-                                <textarea className='w-full dark:bg-slate-700 dark:border-slate-800 dark:text-slate-50 border-slate-300 border-2 rounded-sm p-3 h-64' placeholder='Message' name="message" required />
+                                <textarea className='w-full dark:bg-slate-700 dark:border-slate-800 dark:text-slate-50 border-slate-300 border-2 rounded-sm p-3 h-52'
+                                    placeholder='Message'
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                    required />
                             </div>
                         </div>
                         <div className='w-full text-center mt-4 text-white'>

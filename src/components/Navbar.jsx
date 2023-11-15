@@ -5,32 +5,6 @@ import { throttle } from 'lodash';
 
 const Navbar = () => {
 
-
-
-
-    // useEffect(() => {
-    //     // Temukan tombol Dark Mode
-    //     let darkModeToggle = document.getElementsByClassName("darkModeToggle");
-
-    //     // Periksa status mode gelap pada saat memuat halaman
-    //     if (localStorage.getItem("darkMode") === "enabled") {
-    //         document.documentElement.classList.add("dark");
-    //     }
-
-    //     // Tambahkan event listener untuk tombol
-    //     darkModeToggle.addEventListener("click", function () {
-    //         // Toggle kelas 'dark' pada elemen HTML root
-    //         document.documentElement.classList.toggle("dark");
-
-    //         // Simpan status mode gelap ke localStorage
-    //         if (document.documentElement.classList.contains("dark")) {
-    //             localStorage.setItem("darkMode", "enabled");
-    //         } else {
-    //             localStorage.setItem("darkMode", "disabled");
-    //         }
-    //     });
-    // }, [])
-    // State untuk melacak status mode gelap
     const [darkMode, setDarkMode] = useState(false);
 
     // Menerapkan mode gelap saat komponen dimuat
@@ -115,22 +89,22 @@ const Navbar = () => {
     return (
         <div
             className={cn(
-                ' text-black flex justify-between items-center w-full h-20 fixed px-4 navbar z-10',
+                ' text-black flex justify-between items-center w-full h-20 fixed md:px-4 navbar z-10',
                 {
                     'bg-slate-300 dark:bg-slate-950 shadow-lg ': hasScrolled
                 }
             )}>
             <div>
                 <h1 className={cn(
-                    'text-5xl font-bold ml-8 logo dark:text-white',
+                    'text-5xl md:text-6xl italic font-semibold ml-8 logo dark:text-white',
                     {
                         'text-green-700 dark:text-green-600': hasScrolled
                     }
-                )}>Fahmi</h1>
+                )}>FHZ</h1>
             </div>
             <ul className='hidden md:flex'>
                 {links.map(link => (
-                    <li key={link.id} className='dark:text-white hover:text-green-600 text-xl px-4 mr-8 cursor-pointer font-medium text-gray-800 hover:scale-110 duration-200 '><a href={link.link}>{link.name}</a></li>
+                    <li key={link.id} className='dark:text-white hover:text-green-600 dark:hover:text-green-500 text-xl px-4 mr-8 cursor-pointer font-medium text-gray-800 hover:scale-110 duration-200 '><a href={link.link}>{link.name}</a></li>
                 ))}
 
                 <li className='flex items-center gap-1'>
