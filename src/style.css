@@ -7,3 +7,20 @@
 .navbar {
     font-family: Cuprum;
 }
+
+.logo-shine {
+    font-family: 'Bungee Inline', sans-serif;
+    font-family: 'Cuprum', sans-serif;
+    font-family: 'Fugaz One', sans-serif;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Rubik', sans-serif;
+}
+
+.logo-dark {
+    font-family: 'Bungee Inline', sans-serif;
+    font-family: 'Bungee Shade', sans-serif;
+    font-family: 'Cuprum', sans-serif;
+    font-family: 'Fugaz One', sans-serif;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Rubik', sans-serif;
+}

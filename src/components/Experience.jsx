@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import css from '../assets/logo/css.png'
 import express from '../assets/logo/express.png'
 import html from '../assets/logo/html.png'
@@ -6,8 +6,18 @@ import js from '../assets/logo/js.png'
 import nodejs from '../assets/logo/nodejs.png'
 import react from '../assets/logo/react.png'
 import tailwind from '../assets/logo/tailwind.png'
+import { motion, useInView, useAnimation } from 'framer-motion'
 
 const Experience = () => {
+
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+    const mainControls = useAnimation();
+    useEffect(() => {
+        if (isInView) {
+            mainControls.start("visible")
+        }
+    }, [isInView])
 
     const logos = [
         {
@@ -62,12 +72,21 @@ const Experience = () => {
                     <p className='text-3xl  text-center font-semibold mb-2'>Experience</p>
                 </div>
                 <br />
-                <div className='grid grid-cols-2 md:grid-cols-3 md:gap-8 justify-items-center'>
+                <div ref={ref} className='grid grid-cols-2 md:grid-cols-3 md:gap-8 justify-items-center'>
                     {logos.map(logo => (
-                        <div className={`shadow-md px-12 py-2 shadow-${logo.color}-400`}>
+                        <motion.div
+                            className={`hover:scale-110 px-12 py-2 `}
+                            variants={{
+                                hidden: { opacity: 0, x: -205 },
+                                visible: { opacity: 1, x: 0 },
+                            }}
+                            initial='hidden'
+                            animate={mainControls}
+                            transition={{ duration: 2, delay: 0.25 }}
+                        >
                             <img className='w-28 h-22' key={logo.id} src={logo.img} alt="" />
                             <p className='text-center py-2 font-semibold'>{logo.name}</p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

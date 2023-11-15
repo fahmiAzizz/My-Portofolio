@@ -1,9 +1,20 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
 import Swal from 'sweetalert2'
 import { BiLogoGmail, BiLogoLinkedinSquare, BiLogoWhatsappSquare, BiLogoGithub, BiLogoInstagramAlt } from 'react-icons/bi'
+import { motion, useInView, useAnimation } from 'framer-motion'
 
 const Contact = () => {
+
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+    const mainControls = useAnimation();
+    useEffect(() => {
+        if (isInView) {
+            mainControls.start("visible")
+        }
+    }, [isInView])
+
     const form = useRef();
     const [formData, setFormData] = useState({
         from_name: '',
@@ -62,8 +73,16 @@ const Contact = () => {
     return (
         <div id='contact' className=' md:h-screen items-center flex justify-center bg-white dark:bg-slate-950  w-full p-4 md:p-0 dark:text-slate-100 dark:bg-gradient-to-b dark:to-slate-950 
         dark:from-slate-900 text-slate-800'>
-            <div className='md:h-[80%] justify-center flex items-center'>
-                <div className='flex justify-center border-2 border-slate-300 bg-slate-200 shadow-lg rounded-md p-3 items-center w-full mx-2 md:mx-32 h-full  md:h-[80%] flex-col md:flex-row dark:bg-slate-800 dark:border-slate-900'>
+            <div ref={ref} className='md:h-[80%] justify-center flex items-center'>
+                <motion.div
+                    className='flex justify-center border-2 border-slate-300 bg-slate-200 shadow-lg rounded-md p-3 items-center w-full mx-2 md:mx-32 h-full  md:h-[80%] flex-col md:flex-row dark:bg-slate-800 dark:border-slate-900'
+                    variants={{
+                        hidden: { opacity: 0, x: -205 },
+                        visible: { opacity: 1, x: 0 },
+                    }}
+                    initial='hidden'
+                    animate={mainControls}
+                    transition={{ duration: 2, delay: 0.25 }}>
                     <div className='bg-green-600 dark:bg-green-600 text-white mx-auto md:h-full md:1/2 lg:w-2/5  w-full justify-center items-center rounded-lg p-2'>
                         <h1 className='text-2xl p-2'>Contact Information</h1>
                         {mycontact.map((Contact) => {
@@ -109,7 +128,7 @@ const Contact = () => {
                             <button onClick={submitMessage} className='duration-300 text-center p-2 rounded-lg mx-auto bg-gradient-to-r from-green-500 to-green-600 hover:scale-105 hover:ring-green-700 hover:ring-2' type="submit" value="Send" >Send Message</button>
                         </div>
                     </form>
-                </div>
+                </motion.div>
             </div>
         </div>
     )

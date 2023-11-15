@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Project2 from '../assets/project/project2.png';
 import Project3 from '../assets/project/project3.png';
 import Project4 from '../assets/project/project4.png';
-
+import { motion, useInView, useAnimation } from 'framer-motion';
 
 const Portofolio = () => {
+
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+    const mainControls = useAnimation();
+    useEffect(() => {
+        if (isInView) {
+            mainControls.start("visible")
+        }
+    }, [isInView])
 
     const projects = [
         {
@@ -39,22 +48,32 @@ const Portofolio = () => {
                     <p className='text-center  text-3xl  font-semibold '>Portofolio</p>
                 </div>
                 <br />
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+                <div ref={ref} className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                     {projects.map((project) => (
-                        <div key={project.id} className='border hover:shadow-md hover:shadow-slate-800 hover:dark:shadow-slate-100 border-slate-800 rounded-lg overflow-hidden hover:scale-105 duration-200 dark:border-slate-100'>
-                            <img src={project.pict} alt="" className='w-full h-56' />
-                            <p className=' border-b-2 border-slate-300 p-2 text-center'>{project.name}</p>
-                            <div className='flex flex-row items-center justify-center  py-2'>
-                                <button className='w-2/3 hover:scale-105 duration-300'>
-                                    <a href={project.demo} target="_blank">Demo</a>
-                                </button>
-                                <div className='w-1/2 hover:scale-105 duration-300'>
-                                    <button className='flex items-center'>
-                                        <a href={project.github} target="_blank">Code</a>
+                        <motion.div key={project.id}
+                            className='border hover:shadow-md hover:shadow-slate-800 hover:dark:shadow-slate-100 border-slate-800 rounded-lg overflow-hidden hover:scale-105 duration-200 dark:border-slate-100'
+                            variants={{
+                                hidden: { opacity: 0, x: -205 },
+                                visible: { opacity: 1, x: 0 },
+                            }}
+                            initial='hidden'
+                            animate={mainControls}
+                            transition={{ duration: 2, delay: 0.25 }}>
+                            <div>
+                                <img src={project.pict} alt="" className='w-full h-56' />
+                                <p className=' border-b-2 border-slate-300 p-2 text-center'>{project.name}</p>
+                                <div className='flex flex-row items-center justify-center  py-2'>
+                                    <button className='w-2/3 hover:scale-105 duration-300'>
+                                        <a href={project.demo} target="_blank">Demo</a>
                                     </button>
+                                    <div className='w-1/2 hover:scale-105 duration-300'>
+                                        <button className='flex items-center'>
+                                            <a href={project.github} target="_blank">Code</a>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
