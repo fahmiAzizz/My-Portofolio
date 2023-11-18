@@ -96,7 +96,7 @@ const Navbar = () => {
             )}>
             <div>
                 <h1 className={cn(
-                    'text-5xl md:text-6xl italic font-semibold ml-8 logo-shine dark:logo-dark dark:text-white',
+                    'text-4xl md:text-5xl italic font-semibold ml-8 logo-shine dark:logo-dark dark:text-white',
                     {
                         'text-green-700 dark:text-green-600': hasScrolled
                     }

@@ -15,7 +15,7 @@ const About = () => {
         <div
             id='about'
             className='w-full h-screen dark:text-slate-100 dark:bg-gradient-to-b dark:to-slate-800 
-            dark:from-slate-900 text-slate-800 bg-slate-200 mb-1'>
+            dark:from-slate-900 text-slate-800 bg-slate-200 '>
             <div
                 className='w-full h-full justify-center items-end md:items-center p-6 max-w-screen-lg mx-auto grid md:grid-cols-2'>
                 <motion.div
@@ -27,7 +27,7 @@ const About = () => {
                     }}
                     initial='hidden'
                     animate={mainControls}
-                    transition={{ duration: 3, delay: 0.25 }}>
+                    transition={{ duration: 2, delay: 0.25 }}>
                     <img
                         src={Hero}
                         className='w-2/3 rounded-3xl mx-auto'
@@ -37,7 +37,7 @@ const About = () => {
                 <motion.div
                     className='m-2'
                     variants={{
-                        hidden: { opacity: 0, x: -205 },
+                        hidden: { opacity: 0, x: 205 },
                         visible: { opacity: 1, x: 0 },
                     }}
                     initial='hidden'

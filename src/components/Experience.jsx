@@ -77,8 +77,8 @@ const Experience = () => {
                         <motion.div
                             className={`hover:scale-110 px-12 py-2 `}
                             variants={{
-                                hidden: { opacity: 0, x: -205 },
-                                visible: { opacity: 1, x: 0 },
+                                hidden: { opacity: 0 },
+                                visible: { opacity: 1 },
                             }}
                             initial='hidden'
                             animate={mainControls}

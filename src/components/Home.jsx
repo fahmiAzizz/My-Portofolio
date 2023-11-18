@@ -19,8 +19,8 @@ const Home = () => {
                 <motion.div
                     className=' p-2 md:p-0'
                     variants={{
-                        hidden: { opacity: 0, x: -205 },
-                        visible: { opacity: 1, x: 0 },
+                        hidden: { opacity: 0, y: -200 },
+                        visible: { opacity: 1, y: 0 },
                     }}
                     initial='hidden'
                     animate={mainControls}

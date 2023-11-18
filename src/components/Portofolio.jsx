@@ -53,8 +53,8 @@ const Portofolio = () => {
                         <motion.div key={project.id}
                             className='border hover:shadow-md hover:shadow-slate-800 hover:dark:shadow-slate-100 border-slate-800 rounded-lg overflow-hidden hover:scale-105 duration-200 dark:border-slate-100'
                             variants={{
-                                hidden: { opacity: 0, x: -205 },
-                                visible: { opacity: 1, x: 0 },
+                                hidden: { opacity: 0, y: 200 },
+                                visible: { opacity: 1, y: 0 },
                             }}
                             initial='hidden'
                             animate={mainControls}
