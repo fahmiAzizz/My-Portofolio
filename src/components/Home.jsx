@@ -29,15 +29,12 @@ const Home = () => {
                     <p className='px-1 text-4xl md:text-6xl font-bold text-center'>Hello i'am <span className='text-green-500'>Fahmi Aziz</span></p>
                     {/* <h1 className=' text-green-500  text-4xl md:text-6xl font-bold mb-2'>Fullstack Website Developer</h1> */}
                     <div className='text-center'>
-                        <p className=''>
-                            elit. Quaerat voluptates quos illo nemo dolorem deleniti accusamus mollitia eius beatae minus!
-                        </p>
-                        <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit.</p>
+                        <p className='text-xl'>I am a fullstack website developer, I can create websites with good and responsive design, I am also used to working with databases</p>
                     </div>
                     <div className='flex justify-center p-3 gap-5'>
-                        <a href="" className='border border-slate-700 dark:border-white hover:scale-110 duration-300 rounded-full'><BiLogoGmail size={20} className='m-2' /></a>
-                        <a href="" className='border border-slate-700 dark:border-white hover:scale-110 duration-300 rounded-full'><BiLogoLinkedinSquare size={20} className='m-2' /></a>
-                        <a href="" className='border border-slate-700 dark:border-white hover:scale-110 duration-300 rounded-full'><BiLogoWhatsapp size={20} className='m-2' /></a>
+                        <a href="mailto:fahmiaziz031102@gmail.com" target='_blank' className='border border-slate-700 dark:border-white hover:scale-110 duration-300 rounded-full'><BiLogoGmail size={20} className='m-2' /></a>
+                        <a href="https://www.linkedin.com/in/fahmi-aziz-463640272/" target='_blank' className='border border-slate-700 dark:border-white hover:scale-110 duration-300 rounded-full'><BiLogoLinkedinSquare size={20} className='m-2' /></a>
+                        <a href="https://wa.me/6283896373574" target='_blank' className='border border-slate-700 dark:border-white hover:scale-110 duration-300 rounded-full'><BiLogoWhatsapp size={20} className='m-2' /></a>
                     </div>
                 </motion.div>
             </div>

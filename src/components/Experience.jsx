@@ -75,7 +75,7 @@ const Experience = () => {
                 <div ref={ref} className='grid grid-cols-2 md:grid-cols-3 md:gap-8 justify-items-center'>
                     {logos.map(logo => (
                         <motion.div
-                            className={`hover:scale-110 px-12 py-2 `}
+                            className={`hover:scale-110 px-12 py-2 duration-200 `}
                             variants={{
                                 hidden: { opacity: 0 },
                                 visible: { opacity: 1 },

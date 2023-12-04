@@ -67,7 +67,12 @@ const Contact = () => {
             }, (error) => {
                 console.log(error.text);
             });
-        Swal.fire('Pesan Terkirim');
+        Swal.fire({
+            title: 'Pesan Terkirim',
+            timer: 5000, // durasi dalam milidetik
+            icon: 'success',
+            showConfirmButton: false, // tombol OK tidak ditampilkan
+        });
     }
 
     return (

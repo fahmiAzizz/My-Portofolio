@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import Hero from '../assets/Hero.jpeg'
+import Hero from '../assets/logo/profile.jpeg'
 import { motion, useAnimation, useInView } from 'framer-motion';
 
 const About = () => {
@@ -45,8 +45,7 @@ const About = () => {
                     transition={{ duration: 3, delay: 0.25 }}>
                     <h1 className='text-2xl font-semibold'>About Me</h1>
                     <div className='py-4'>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit...</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                        <p>Hello, my name is Fahmi Aziz. I was born 3 November 2002 in Bogor and am currently taking an Informatics Engineering course at Pamulang University. I have an interest in web development and currently I am focusing on learning backend websites.</p>
                     </div>
                     <button
                         className='bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-2 text-white hover:scale-105 duration-300 hover:ring-green-700 hover:ring-2'>

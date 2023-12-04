@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import Project2 from '../assets/project/project2.png';
 import Project3 from '../assets/project/project3.png';
-import Project4 from '../assets/project/project4.png';
+import Project5 from '../assets/project/project5.png';
 import { motion, useInView, useAnimation } from 'framer-motion';
 
 const Portofolio = () => {
@@ -32,10 +32,10 @@ const Portofolio = () => {
         },
         {
             id: 3,
-            name: 'My Portofolio',
-            pict: Project4,
-            demo: 'https://my-portofolio-nine-nu.vercel.app/',
-            github: 'https://github.com/fahmiAzizz/My-Portofolio'
+            name: 'CRUD Express JS',
+            pict: Project5,
+            demo: 'https://github.com/fahmiAzizz/CRUD_Rest_Api',
+            github: 'https://github.com/fahmiAzizz/CRUD_Rest_Api'
         }
     ]
 
