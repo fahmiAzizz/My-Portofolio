@@ -26,10 +26,10 @@ const Home = () => {
                     animate={mainControls}
                     transition={{ duration: 2, delay: 0.25 }}
                 >
-                    <p className='px-1 text-4xl md:text-6xl font-bold text-center'>Hello i'am <span className='text-green-500'>Fahmi Aziz</span></p>
+                    <p className='px-1 text-3xl md:text-6xl font-bold text-center'>Hello i'am <span className='text-green-500 '>Fahmi Aziz</span></p>
                     {/* <h1 className=' text-green-500  text-4xl md:text-6xl font-bold mb-2'>Fullstack Website Developer</h1> */}
                     <div className='text-center'>
-                        <p className='text-xl'>I am a fullstack website developer, I can create websites with good and responsive design, I am also used to working with databases</p>
+                        <p className='text-md md:text-xl'>I am a fullstack website developer, I can create websites with good and responsive design, I am also used to working with databases</p>
                     </div>
                     <div className='flex justify-center p-3 gap-5'>
                         <a href="mailto:fahmiaziz031102@gmail.com" target='_blank' className='border border-slate-700 dark:border-white hover:scale-110 duration-300 rounded-full'><BiLogoGmail size={20} className='m-2' /></a>
