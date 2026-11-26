@@ -98,7 +98,7 @@ const Navbar = () => {
                 <h1 className={cn(
                     'text-4xl md:text-5xl italic font-semibold ml-8 logo-shine dark:logo-dark dark:text-white',
                     {
-                        'text-green-700 dark:text-green-600': hasScrolled
+                        'dark:text-green-500': hasScrolled
                     }
                 )}>FHZ</h1>
             </div>
