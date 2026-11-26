@@ -2,3 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== TEMA: Seashell & Obsidian (Light) + Deep Midnight Denim (Dark) ===== */
+:root {
+    --bg-primary:     #F9F5ED;
+    --bg-surface:     #EFE9DD;
+    --text-primary:   #2A2A2A;
+    --text-secondary: #5C5A55;
+    --accent:         #5E83AE;
+    --border:         #E2DBD0;
+}
+
+.dark {
+    --bg-primary:     #171B21;
+    --bg-surface:     #20262E;
+    --text-primary:   #F9F5ED;
+    --text-secondary: #9AA5B4;
+    --accent:         #769BC7;
+    --border:         #2D3540;
+}

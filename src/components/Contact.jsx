@@ -76,11 +76,10 @@ const Contact = () => {
     }
 
     return (
-        <div id='contact' className=' md:h-screen items-center flex justify-center bg-white dark:bg-slate-950  w-full p-4 md:p-0 dark:text-slate-100 dark:bg-gradient-to-b dark:to-slate-950 
-        dark:from-slate-900 text-slate-800'>
+        <div id='contact' className='md:h-screen items-center flex justify-center bg-brand-bg text-brand-text dark:bg-brand-dark-bg dark:text-brand-dark-text w-full p-4 md:p-0'>
             <div ref={ref} className='md:h-[80%] justify-center flex items-center'>
                 <motion.div
-                    className='flex justify-center border-2 border-slate-300 bg-slate-200 shadow-lg rounded-md p-3 items-center w-full mx-2 md:mx-32 h-full  md:h-[80%] flex-col md:flex-row dark:bg-slate-800 dark:border-slate-900'
+                    className='flex justify-center border-2 border-brand-border bg-brand-surface shadow-lg rounded-md p-3 items-center w-full mx-2 md:mx-32 h-full md:h-[80%] flex-col md:flex-row dark:bg-brand-dark-surface dark:border-brand-dark-border'
                     variants={{
                         hidden: { opacity: 0, x: -205 },
                         visible: { opacity: 1, x: 0 },
@@ -88,13 +87,13 @@ const Contact = () => {
                     initial='hidden'
                     animate={mainControls}
                     transition={{ duration: 2, delay: 0.25 }}>
-                    <div className='bg-green-600 dark:bg-green-600 text-white mx-auto md:h-full md:1/2 lg:w-2/5  w-full justify-center items-center rounded-lg p-2'>
-                        <h1 className='text-2xl p-2'>Contact Information</h1>
+                    <div className='bg-brand-accent dark:bg-brand-dark-accent text-[#F9F5ED] dark:text-[#171B21] mx-auto md:h-full md:1/2 lg:w-2/5 w-full justify-center items-center rounded-lg p-2'>
+                        <h1 className='text-2xl p-2 font-semibold'>Contact Information</h1>
                         {mycontact.map((Contact) => {
                             return (
-                                <div key={Contact.id} className='flex items-center p-1 text-lg'>
+                                <div key={Contact.id} className='flex items-center p-1 text-lg gap-2'>
                                     <Contact.logo size={25} />
-                                    <a href={Contact.link} target='_blank'>{Contact.name}</a>
+                                    <a href={Contact.link} target='_blank' rel='noopener noreferrer'>{Contact.name}</a>
                                 </div>
                             )
                         })}
@@ -103,7 +102,7 @@ const Contact = () => {
                         <div className='grid grid-cols-2 gap-3'>
                             <div>
                                 <input
-                                    className='w-full dark:bg-slate-700 dark:border-slate-800 dark:text-slate-50 border-slate-300 border-2 rounded-sm p-3'
+                                    className='w-full bg-brand-bg dark:bg-brand-dark-bg border-brand-border dark:border-brand-dark-border text-brand-text dark:text-brand-dark-text placeholder:text-brand-muted dark:placeholder:text-brand-dark-muted border-2 rounded-sm p-3'
                                     placeholder='Name'
                                     type="text"
                                     name="from_name"
@@ -112,7 +111,7 @@ const Contact = () => {
                                     required />
                             </div>
                             <div>
-                                <input className='w-full dark:bg-slate-700 dark:border-slate-800 dark:text-slate-50 border-slate-300 border-2 rounded-sm p-3'
+                                <input className='w-full bg-brand-bg dark:bg-brand-dark-bg border-brand-border dark:border-brand-dark-border text-brand-text dark:text-brand-dark-text placeholder:text-brand-muted dark:placeholder:text-brand-dark-muted border-2 rounded-sm p-3'
                                     placeholder='Email'
                                     type="email"
                                     name="email_name"
@@ -121,7 +120,7 @@ const Contact = () => {
                                     required />
                             </div>
                             <div className='col-span-2'>
-                                <textarea className='w-full dark:bg-slate-700 dark:border-slate-800 dark:text-slate-50 border-slate-300 border-2 rounded-sm p-3 h-52'
+                                <textarea className='w-full bg-brand-bg dark:bg-brand-dark-bg border-brand-border dark:border-brand-dark-border text-brand-text dark:text-brand-dark-text placeholder:text-brand-muted dark:placeholder:text-brand-dark-muted border-2 rounded-sm p-3 h-52'
                                     placeholder='Message'
                                     name="message"
                                     value={formData.message}
@@ -129,8 +128,8 @@ const Contact = () => {
                                     required />
                             </div>
                         </div>
-                        <div className='w-full text-center mt-4 text-white'>
-                            <button onClick={submitMessage} className='duration-300 text-center p-2 rounded-lg mx-auto bg-gradient-to-r from-green-500 to-green-600 hover:scale-105 hover:ring-green-700 hover:ring-2' type="submit" value="Send" >Send Message</button>
+                        <div className='w-full text-center mt-4'>
+                            <button onClick={submitMessage} className='duration-300 text-center p-2 rounded-lg mx-auto bg-brand-accent dark:bg-brand-dark-accent text-[#F9F5ED] dark:text-[#171B21] font-semibold hover:scale-105 hover:ring-brand-accent dark:hover:ring-brand-dark-accent hover:ring-2' type="submit" value="Send" >Send Message</button>
                         </div>
                     </form>
                 </motion.div>

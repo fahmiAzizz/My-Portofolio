@@ -77,8 +77,7 @@ const Portofolio = () => {
     };
 
     return (
-        <div id="portofolio" className='w-full py-20 text-slate-800 h-auto bg-slate-50 dark:text-slate-100 dark:bg-gradient-to-b dark:from-slate-800 
-        dark:to-slate-900 '>
+        <div id="portofolio" className='w-full py-20 h-auto bg-brand-bg text-brand-text dark:bg-brand-dark-bg dark:text-brand-dark-text'>
             <div className='p-6 max-w-screen-lg  mx-auto justify-center h-auto flex flex-col'>
                 <div>
                     <p className='text-center  text-3xl  font-semibold '>Portofolio</p>
@@ -88,7 +87,7 @@ const Portofolio = () => {
                     {projects.map((project) => (
                         <motion.div
                             key={project.id}
-                            className='border hover:shadow-md hover:shadow-slate-800 hover:dark:shadow-slate-100 border-slate-800 rounded-lg overflow-hidden hover:scale-105 duration-200 dark:border-slate-100 cursor-pointer'
+                            className='border bg-brand-surface dark:bg-brand-dark-surface hover:shadow-md hover:shadow-brand-accent dark:hover:shadow-brand-dark-accent border-brand-border dark:border-brand-dark-border rounded-lg overflow-hidden hover:scale-105 duration-200 cursor-pointer'
                             variants={{
                                 hidden: { opacity: 0, y: 200 },
                                 visible: { opacity: 1, y: 0 },
@@ -100,7 +99,7 @@ const Portofolio = () => {
                         >
                             <div>
                                 <img src={project.pict} alt={project.name} className='w-full h-56 object-cover' />
-                                <p className=' border-b-2 border-slate-300 p-2 text-center'>{project.name}</p>
+                                <p className=' border-b-2 border-brand-border dark:border-brand-dark-border p-2 text-center'>{project.name}</p>
                                 <div className='flex flex-row items-center justify-center py-2'>
                                     <button
                                         className='w-2/3 hover:scale-105 duration-300'
@@ -134,7 +133,7 @@ const Portofolio = () => {
                         onClick={closeModal}
                     >
                         <motion.div
-                            className="relative bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden"
+                            className="relative bg-brand-bg dark:bg-brand-dark-surface rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden border border-brand-border dark:border-brand-dark-border"
                             initial={{ scale: 0.85, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.85, opacity: 0 }}
@@ -143,7 +142,7 @@ const Portofolio = () => {
                         >
                             {/* Tombol Tutup */}
                             <button
-                                className="absolute top-3 right-4 text-2xl font-bold text-slate-400 hover:text-slate-800 dark:hover:text-white z-10 leading-none"
+                                className="absolute top-3 right-4 text-2xl font-bold text-brand-muted dark:text-brand-dark-muted hover:text-brand-text dark:hover:text-brand-dark-text z-10 leading-none"
                                 onClick={closeModal}
                             >
                                 &times;
@@ -160,14 +159,14 @@ const Portofolio = () => {
                                     />
                                     {/* Tombol Prev */}
                                     <button
-                                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-black/80 text-xl"
+                                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-[#F9F5ED] rounded-full w-8 h-8 flex items-center justify-center hover:bg-black/80 text-xl"
                                         onClick={prevSlide}
                                     >
                                         &#8249;
                                     </button>
                                     {/* Tombol Next */}
                                     <button
-                                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-black/80 text-xl"
+                                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-[#F9F5ED] rounded-full w-8 h-8 flex items-center justify-center hover:bg-black/80 text-xl"
                                         onClick={nextSlide}
                                     >
                                         &#8250;
@@ -177,7 +176,7 @@ const Portofolio = () => {
                                         {projects.map((_, i) => (
                                             <button
                                                 key={i}
-                                                className={`w-2 h-2 rounded-full transition-all ${i === carouselIndex ? 'bg-white scale-125' : 'bg-white/50'}`}
+                                                className={`w-2 h-2 rounded-full transition-all ${i === carouselIndex ? 'bg-brand-bg scale-125' : 'bg-brand-bg/50'}`}
                                                 onClick={(e) => { e.stopPropagation(); setCarouselIndex(i); }}
                                             />
                                         ))}
@@ -197,10 +196,10 @@ const Portofolio = () => {
                                 const display = projects.length > 3 ? projects[carouselIndex] : selectedProject;
                                 return (
                                     <div className="p-6">
-                                        <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-2">
+                                        <h2 className="text-xl font-bold text-brand-text dark:text-brand-dark-text mb-2">
                                             {display.name}
                                         </h2>
-                                        <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">
+                                        <p className="text-sm text-brand-muted dark:text-brand-dark-muted mb-4">
                                             {display.description}
                                         </p>
                                         {/* Tech Badges */}
@@ -208,7 +207,7 @@ const Portofolio = () => {
                                             {display.tech.map((t, i) => (
                                                 <span
                                                     key={i}
-                                                    className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-3 py-1 rounded-full border border-slate-300 dark:border-slate-600"
+                                                    className="text-xs bg-brand-surface dark:bg-brand-dark-bg text-brand-text dark:text-brand-dark-muted px-3 py-1 rounded-full border border-brand-border dark:border-brand-dark-border"
                                                 >
                                                     {t}
                                                 </span>
@@ -219,7 +218,7 @@ const Portofolio = () => {
                                             href={display.demo}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-block w-full text-center bg-slate-800 dark:bg-slate-100 text-white dark:text-slate-800 font-semibold py-2.5 rounded-xl hover:opacity-80 transition"
+                                            className="inline-block w-full text-center bg-brand-accent dark:bg-brand-dark-accent text-[#F9F5ED] dark:text-[#171B21] font-semibold py-2.5 rounded-xl hover:opacity-80 transition"
                                         >
                                             🔗 Live Demo
                                         </a>

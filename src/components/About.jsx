@@ -14,8 +14,8 @@ const About = () => {
     return (
         <div
             id='about'
-            className='w-full h-screen dark:text-slate-100 dark:bg-gradient-to-b dark:to-slate-800 
-            dark:from-slate-900 text-slate-800 bg-slate-200 '>
+            className='w-full h-screen bg-brand-surface text-brand-text 
+            dark:bg-brand-dark-bg dark:text-brand-dark-text'>
             <div
                 className='w-full h-full justify-center items-end md:items-center p-6 max-w-screen-lg mx-auto grid md:grid-cols-2'>
                 <motion.div
@@ -44,11 +44,11 @@ const About = () => {
                     animate={mainControls}
                     transition={{ duration: 3, delay: 0.25 }}>
                     <h1 className='text-2xl font-semibold'>About Me</h1>
-                    <div className='py-4'>
+                    <div className='py-4 text-brand-muted dark:text-brand-dark-muted'>
                         <p>Hello, my name is Fahmi Aziz. I was born 3 November 2002 in Bogor and am currently taking an Informatics Engineering course at Pamulang University. I have an interest in web development and currently I am focusing on learning backend websites.</p>
                     </div>
                     <button
-                        className='bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-2 text-white hover:scale-105 duration-300 hover:ring-green-700 hover:ring-2'>
+                        className='bg-brand-accent dark:bg-brand-dark-accent rounded-xl p-2 text-[#F9F5ED] dark:text-[#171B21] font-semibold hover:scale-105 duration-300 hover:ring-brand-accent dark:hover:ring-brand-dark-accent hover:ring-2'>
                         <a href="#contact">Contact Me</a>
                     </button>
                 </motion.div>

@@ -61,7 +61,7 @@ const Experience = () => {
     ];
 
     return (
-        <div id="experience" className='w-full py-20 text-black bg-slate-200 dark:text-slate-100 dark:bg-slate-900'>
+        <div id="experience" className='w-full py-20 bg-brand-surface text-brand-text dark:bg-brand-dark-bg dark:text-brand-dark-text'>
             <div className='h-full justify-center p-6 max-w-screen-lg mx-auto flex flex-col'>
                 <div>
                     <p className='text-3xl text-center font-semibold mb-2'>Experience</p>
@@ -71,7 +71,7 @@ const Experience = () => {
                     {categories.map((category) => (
                         <div key={category.label}>
                             {/* Label Kategori */}
-                            <h3 className='text-lg font-semibold mb-4 pb-2 border-b-2 border-slate-400 dark:border-slate-600'>
+                            <h3 className='text-lg font-semibold mb-4 pb-2 border-b-2 border-brand-border dark:border-brand-dark-border'>
                                 {category.label}
                             </h3>
                             {/* Grid logo per kategori */}
