@@ -25,19 +25,39 @@ const Experience = () => {
         }
     }, [isInView]);
 
-    const logos = [
-        { id: 1, img: html, name: 'HTML', color: 'orange' },
-        { id: 2, img: css, name: 'CSS', color: 'blue' },
-        { id: 3, img: js, name: 'Javascript', color: 'yellow' },
-        { id: 4, img: react, name: 'React JS', color: 'blue' },
-        { id: 5, img: tailwind, name: 'Tailwind CSS', color: 'blue' },
-        { id: 6, img: nodejs, name: 'Node JS', color: 'green' },
-        { id: 7, img: express, name: 'Express JS', color: 'purple' },
-        { id: 8, img: ts, name: 'Typescript', color: 'purple' },
-        { id: 9, img: php, name: 'PHP', color: 'purple' },
-        { id: 10, img: mysql, name: 'Mysql', color: 'orange' },
-        { id: 11, img: postgresql, name: 'Postgresql', color: 'orange' },
-        { id: 12, img: rabbitmq, name: 'Rabbit MQ', color: 'orange' },
+    const categories = [
+        {
+            label: 'Frontend',
+            items: [
+                { id: 1, img: html, name: 'HTML' },
+                { id: 2, img: css, name: 'CSS' },
+                { id: 3, img: js, name: 'Javascript' },
+                { id: 4, img: react, name: 'React JS' },
+                { id: 5, img: tailwind, name: 'Tailwind CSS' },
+            ]
+        },
+        {
+            label: 'Backend',
+            items: [
+                { id: 6, img: nodejs, name: 'Node JS' },
+                { id: 7, img: express, name: 'Express JS' },
+                { id: 8, img: ts, name: 'Typescript' },
+                { id: 9, img: php, name: 'PHP' },
+            ]
+        },
+        {
+            label: 'Database',
+            items: [
+                { id: 10, img: mysql, name: 'MySQL' },
+                { id: 11, img: postgresql, name: 'PostgreSQL' },
+            ]
+        },
+        {
+            label: 'Tools & Others',
+            items: [
+                { id: 12, img: rabbitmq, name: 'RabbitMQ' },
+            ]
+        },
     ];
 
     return (
@@ -47,26 +67,37 @@ const Experience = () => {
                     <p className='text-3xl text-center font-semibold mb-2'>Experience</p>
                 </div>
                 <br />
-                <div ref={ref} className='grid grid-cols-2 md:grid-cols-3 md:gap-8 justify-items-center'>
-                    {logos.map(logo => (
-                        <motion.div
-                            key={logo.id}
-                            className='hover:scale-110 px-12 py-4 duration-200'
-                            variants={{
-                                hidden: { opacity: 0 },
-                                visible: { opacity: 1 },
-                            }}
-                            initial='hidden'
-                            animate={mainControls}
-                            transition={{ duration: 2, delay: 0.25 }}
-                        >
-                            <img
-                                src={logo.img}
-                                alt={logo.name}
-                                className='w-28 h-28 object-contain mx-auto'
-                            />
-                            <p className='text-center py-2 font-semibold'>{logo.name}</p>
-                        </motion.div>
+                <div ref={ref} className='flex flex-col gap-10'>
+                    {categories.map((category) => (
+                        <div key={category.label}>
+                            {/* Label Kategori */}
+                            <h3 className='text-lg font-semibold mb-4 pb-2 border-b-2 border-slate-400 dark:border-slate-600'>
+                                {category.label}
+                            </h3>
+                            {/* Grid logo per kategori */}
+                            <div className='grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 justify-items-center'>
+                                {category.items.map((logo) => (
+                                    <motion.div
+                                        key={logo.id}
+                                        className='hover:scale-110 px-4 py-4 duration-200 flex flex-col items-center'
+                                        variants={{
+                                            hidden: { opacity: 0, y: 20 },
+                                            visible: { opacity: 1, y: 0 },
+                                        }}
+                                        initial='hidden'
+                                        animate={mainControls}
+                                        transition={{ duration: 1, delay: 0.2 }}
+                                    >
+                                        <img
+                                            src={logo.img}
+                                            alt={logo.name}
+                                            className='w-16 h-16 object-contain mx-auto'
+                                        />
+                                        <p className='text-center py-2 text-sm font-semibold'>{logo.name}</p>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div>
